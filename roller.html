@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="roller.js"></script>
     </head>
     <body>
-        This is a dice roller!
+        <div class="grid-container">
+            <div class="item1" onclick="RollDice()">Roll!</div>
+            <div class="item2">1</div>
+            <div class="item3">2</div>  
+            <div class="item4" onclick="toggle(2)">3</div>
+            <div class="item5" onclick="toggle(3)">4</div>
+            <div class="item6" onclick="toggle(4)">5</div>
+            <div class="item7" onclick="toggle(5)">6</div>
+        </div>
     </body>
 </html>

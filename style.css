@@ -1,0 +1,48 @@
+.item1 { grid-area: roll; }
+.item2 { grid-area: pleft; background-color: black;}
+.item3 { grid-area: pright; background-color: black;}
+.item4 { grid-area: ared; background-color: #ed152f;}
+.item5 { grid-area: ayellow; background-color: #fdbd0d;}
+.item6 { grid-area: ablue; background-color: #0e68b4;}
+.item7 { grid-area: agreen; background-color: #0ca950; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'roll roll roll roll'
+    'pleft pleft pright pright'
+    'ared ayellow ablue agreen';
+  gap: 10px;
+  background-color: #606263;
+  padding: 10px;
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    color: white;
+    font-size: 8em;
+  }
+
+
+table {
+    background-color: black;
+    padding: 10px;
+    width: 90vw;
+    height: 60vh;
+    margin: auto;
+    table-layout: fixed;
+}
+tr {
+    justify-content: center;
+}
+td {
+    color: white;
+    font-size: 6em;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+}
