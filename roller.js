@@ -33,3 +33,5 @@ function toggle(index){
         document.getElementsByClassName(`item${index+2}`)[0].innerText = "X";
     }
 }
+
+RollDice(); //Set the dice randomly on page load/refresh
