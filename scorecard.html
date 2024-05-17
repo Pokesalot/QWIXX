@@ -5,7 +5,41 @@
         
     </head>
     <body>
-        <table id="Scoreboard"></table>
+        <table class="scoretable" id="Scoreboard"></table>
+        <div style="width: 80vw; margin: auto;">
+            <table style="outline: 2px solid black; display: inline-block;">
+                <thead>
+                    <tr><h1>Penalties (-5 each)</h1></tr>
+                </thead>
+                <tr onclick="penalty()" id="penaltyRow">
+                    <td style="height: 5vh; width: 5vw;">1</td>
+                    <td style="height: 5vh; width: 5vw;"></td>
+                    <td style="height: 5vh; width: 5vw;"></td>
+                    <td style="height: 5vh; width: 5vw;"></td>
+                </tr>
+            </table>
+
+
+            <div style="float: right;">
+                <table>
+                    <tr>
+                        <td id="score0" style="background-color: #ed152f; padding: 1vw;">0</td>
+                        <td style="color: black;">+</td>
+                        <td id="score1"style="background-color: #fdbd0d; padding: 1vw;">0</td>
+                        <td style="color: black;">+</td>
+                        <td id="score2"style="background-color: #0e68b4; padding: 1vw;">0</td>
+                        <td style="color: black;">+</td>
+                        <td id="score3"style="background-color: #0ca950; padding: 1vw;">0</td>
+                        <td style="color: black;">-</td>
+                        <td id="score4"style="background-color: black; padding: 1vw;">0</td>
+                        <td style="color: black;">=</td>
+                        <td id="total" style="background-color: white; color: black;">0</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
         <script src="scorecard.js"></script>
     </body>
 </html>
