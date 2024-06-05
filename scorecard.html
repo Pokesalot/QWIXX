@@ -6,12 +6,12 @@
     </head>
     <body>
         <table class="scoretable" id="Scoreboard"></table>
-        <div style="width: 80vw; margin: auto;">
-            <table style="outline: 2px solid black; display: inline-block;">
+        <div style="width: 90vw; margin: auto;">
+            <table style="outline: 2px solid black; float: left;">
                 <thead>
                     <tr><h1>Penalties (-5 each)</h1></tr>
                 </thead>
-                <tr onclick="penalty()" id="penaltyRow">
+                <tr onclick="pushScore(5,0)" id="penaltyRow">
                     <td style="height: 5vh; width: 5vw;">1</td>
                     <td style="height: 5vh; width: 5vw;"></td>
                     <td style="height: 5vh; width: 5vw;"></td>
@@ -21,6 +21,16 @@
 
 
             <div style="float: right;">
+                <table style="float: left;">
+                    <tr>
+                        <td style="background-color: white; padding: 1vw; color: black; outline: 1px solid black;"  onclick="popScore();">UNDO</td>
+                    </tr>
+                </table>
+                <table style="float: left;">
+                    <tr>
+                        <td style="background-color: white; padding: 1vw; color: white;" id="spaceBuffer">O</td>
+                    </tr>
+                </table>
                 <table>
                     <tr>
                         <td id="score0" style="background-color: #ed152f; padding: 1vw;">0</td>
