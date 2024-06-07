@@ -30,12 +30,19 @@ for(let row = 0; row<rows.length; row++){
         }
     }
 
-    newHTML += `<td id="${row}13" onclick="score(${row},11)">🔓</td></tr>\n`
+    newHTML += `<td id="${row}13" onclick="pushScore(${row},11)">🔓</td></tr>\n`
 }
 
 card.innerHTML = newHTML;
 
 function pushScore(row, cell){
+    for(let i=0; i<moves.length; i++){
+        if(moves[i][0] == row && moves[i][1] == cell){
+            //Already scored
+            console.log("Not pushing")
+            return;
+        }
+    }
     moves.push([row,cell]);
     displayScores();
 }
@@ -49,6 +56,7 @@ function popScore(){
 
 function displayScores(){
     scores = [0,0,0,0,0];
+    //Top half of scoreboard
     for(let row=0;row<=1;row++){
         for(let cell=2;cell<=11;cell++){
             let curCell = document.getElementById(`${row}${cell}`);
@@ -61,6 +69,7 @@ function displayScores(){
         curCell = document.getElementById(`${row}13`);
         curCell.innerText = "🔓";
     }
+    //Bottom half of scoreboard
     for(let row=2;row<=3;row++){
         for(let cell=2;cell<=11;cell++){
             let curCell = document.getElementById(`${row}${cell}`);
@@ -73,12 +82,13 @@ function displayScores(){
         curCell = document.getElementById(`${row}13`);
         curCell.innerText = "🔓";
     }
+    //Penalties box
     let penalties = document.getElementById("penaltyRow");
     for(let curPen=0; curPen<4; curPen++){
         penalties.getElementsByTagName("td")[curPen].innerText = "1";
         penalties.getElementsByTagName("td")[curPen].style.color = "white";
     }
-
+    //Calculate Score by clicking on the appropriate score tiles
     for(let i=0; i<moves.length; i++){
         if(moves[i][0] == 5){
             penalty();
@@ -113,7 +123,7 @@ function score(row, cell){//row is [0,3], cell is [0,11]
             let unlock = document.getElementById(`${row}12`);
             unlock.style.backgroundColor = rows[row];
             unlock.innerText = row>=2?"2":"12";
-            unlock.onclick = function(){score(row,10);};
+            unlock.onclick = function(){pushScore(row,10);};
         }
     }
 
